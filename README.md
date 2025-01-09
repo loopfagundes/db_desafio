@@ -129,6 +129,31 @@ Após a execução, os relatórios de teste podem ser acessados:
 
 ---
 
+#### 📊 Como Executar o Pipeline:
+
+1. Acesse de Actions:
+      - Entre no repositório db_desafio - [GitHub Actions](https://github.com/loopfagundes/db_desafio/actions)
+	
+2. Escolha o Workflow:
+      - Selecione o workflow desejado na lista disponível.
+
+3. Inicie o Workflow:
+	  - Caso o workflow permita execução manual, clique em "Re-run all jobs".
+      - Certifique-se de selecionar a opção 'build'.
+
+4. Acompanhe os Logs:
+	  - Clique na execução ativa do workflow para visualizar os logs e monitorar o progresso.
+
+#### Screenshot do Pipeline:
+![](src/main/resources/img/workflows.png)
+
+**Observação:**
+- **LoginAndPurchaseTestCase**: Realiza testes no fluxo de login e compra, garantindo que o processo funcione corretamente do início ao fim.
+
+- **All Tests**: Executa todos os testes automatizados. Note que ele pode apresentar erros caso falhas de validação sejam detectadas nos testes `(assert)`.
+
+---
+
 ### :memo: Observações Finais
 
 Projeto realizado com muito empenho, acompanhando o processo de detecção de bugs, levantamento de cenários e construção de testes automatizados.
