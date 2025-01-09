@@ -12,42 +12,30 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
-    static boolean isHeadless;
+    private static boolean isHeadless;
 
     public static WebDriver createInstance(BrowserEnum browser) {
-
         String headless = System.getProperty("headless", "false").toLowerCase();
         if (headless.equals("true") || headless.equals("false")) {
             isHeadless = Boolean.parseBoolean(headless);
         } else {
-            throw new IllegalArgumentException("O parâmetro 'headless' aceita apenas valores booleanos: true ou false.");
+            throw new IllegalArgumentException(
+                    "O parâmetro 'headless' aceita apenas valores booleanos: true ou false.");
         }
 
         try {
             switch (browser) {
                 case FIREFOX:
                     WebDriverManager.firefoxdriver().setup();
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    if (isHeadless) {
-                        firefoxOptions.addArguments("--headless");
-                    }
+                    FirefoxOptions firefoxOptions = getFirefoxOptions();
                     return new FirefoxDriver(firefoxOptions);
                 case CHROME:
                     WebDriverManager.chromedriver().setup();
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    if (isHeadless) {
-                        chromeOptions.addArguments("--headless");
-                        chromeOptions.addArguments("--no-sandbox");
-                        chromeOptions.addArguments("--disable-dev-shm-usage");
-                        chromeOptions.addArguments("--ignore-certificate-errors");
-                    }
+                    ChromeOptions chromeOptions = getChromeOptions();
                     return new ChromeDriver(chromeOptions);
                 case EDGE:
                     WebDriverManager.edgedriver().setup();
-                    EdgeOptions edgeOptions = new EdgeOptions();
-                    if (isHeadless) {
-                        edgeOptions.addArguments("--headless");
-                    }
+                    EdgeOptions edgeOptions = getEdgeOptions();
                     return new EdgeDriver(edgeOptions);
                 default:
                     throw new IllegalArgumentException("Navegador inválido:" + browser);
@@ -57,5 +45,42 @@ public class DriverFactory {
         } catch (WebDriverException e) {
             throw new WebDriverException("Não foi possível encontrar o binário do driver.", e);
         }
+    }
+
+    private static FirefoxOptions getFirefoxOptions() {
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        if (isHeadless) {
+            firefoxOptions.addArguments("--headless");
+        }
+        return firefoxOptions;
+    }
+
+    private static ChromeOptions getChromeOptions() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--start-maximized");
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--disable-extensions");
+        chromeOptions.addArguments("--disable-infobars");
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("--ignored-certificates-errors");
+        if (isHeadless) {
+            chromeOptions.addArguments("--headless");
+        }
+        return chromeOptions;
+    }
+
+    private static EdgeOptions getEdgeOptions() {
+        EdgeOptions edgeOptions = new EdgeOptions();
+        edgeOptions.addArguments("--disable-extensions");
+        edgeOptions.addArguments("--disable-infobars");
+        edgeOptions.addArguments("--disable-notifications");
+        edgeOptions.addArguments("--remote-allow-origins=*");
+        edgeOptions.addArguments("--ignored-certificates-errors");
+        if (isHeadless) {
+            edgeOptions.addArguments("--headless");
+        }
+        return edgeOptions;
     }
 }
