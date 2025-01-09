@@ -1,3 +1,4 @@
+
 name: Java CI with Maven
 
 on:
@@ -20,6 +21,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Google Chrome install
+      run: |
+        chmod +x ./InstallChrome.sh
+        ./InstallChrome.sh
+
     - name: Maven Clean
       run: mvn clean
 
@@ -30,4 +36,4 @@ jobs:
       run: mvn install -DskipTests=true
 
     - name: Run Tests
-      run: mvn test -X -Dtest=LoginAndPurchaseTestCase || { echo 'Testes falharam'; exit 1; }
+      run: mvn test -X -Dheadless=true -Dtest=LoginAndPurchaseTestCase || { echo 'Testes falharam'; exit 1; }
