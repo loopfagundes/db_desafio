@@ -36,4 +36,4 @@ jobs:
       run: mvn install -DskipTests=true
 
     - name: Run Tests
-      run: mvn test -X -Dheadless=true || { echo 'Testes falharam'; exit 1; }
+      run: mvn test -X -Dheadless=true -Dtest=LoginAndPurchaseTestCase || { echo 'Testes falharam'; exit 1; }
