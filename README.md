@@ -90,6 +90,10 @@ mvn clean
 ```
 
 ```
+mvn install -DskipTests=true
+```
+
+```
 mvn test
 ```
 
