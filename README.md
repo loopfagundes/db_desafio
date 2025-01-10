@@ -150,7 +150,11 @@ Após a execução, os relatórios de teste podem ser acessados:
 
 **Observação:**
 
+- **LoginAndPurchaseTestCase**: Realiza testes no fluxo de login e compra, garantindo que o processo funcione corretamente do início ao fim.
+
 - **All Tests**: Executa todos os testes automatizados. Note que ele pode apresentar erros caso falhas de validação sejam detectadas nos testes `(assert)`.
+
+- **Outros Workflow**: Os demais fluxos de trabalho são atualizados conforme as implementações, com o objetivo de melhorar a estrutura do código e a qualidade dos testes.
 
 ---
 
