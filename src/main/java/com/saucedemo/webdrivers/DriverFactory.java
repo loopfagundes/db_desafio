@@ -49,6 +49,11 @@ public class DriverFactory {
 
     private static FirefoxOptions getFirefoxOptions() {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.addArguments("--start-maximized");
+        firefoxOptions.addArguments("--disable-extensions");
+        firefoxOptions.addArguments("--disable-infobars");
+        firefoxOptions.addArguments("--disable-notifications");
+        firefoxOptions.addArguments("--ignored-certificates-errors");
         if (isHeadless) {
             firefoxOptions.addArguments("--headless");
         }
@@ -73,6 +78,9 @@ public class DriverFactory {
 
     private static EdgeOptions getEdgeOptions() {
         EdgeOptions edgeOptions = new EdgeOptions();
+        edgeOptions.addArguments("--start-maximized");
+        edgeOptions.addArguments("--no-sandbox");
+        edgeOptions.addArguments("--disable-dev-shm-usage");
         edgeOptions.addArguments("--disable-extensions");
         edgeOptions.addArguments("--disable-infobars");
         edgeOptions.addArguments("--disable-notifications");
