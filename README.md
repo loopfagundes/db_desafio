@@ -148,11 +148,7 @@ Após a execução, os relatórios de teste podem ser acessados:
 4. Acompanhe os Logs:
 	  - Clique na execução ativa do workflow para visualizar os logs e monitorar o progresso.
 
-#### Screenshot do Pipeline:
-![](src/main/resources/img/workflows.png)
-
 **Observação:**
-- **LoginAndPurchaseTestCase**: Realiza testes no fluxo de login e compra, garantindo que o processo funcione corretamente do início ao fim.
 
 - **All Tests**: Executa todos os testes automatizados. Note que ele pode apresentar erros caso falhas de validação sejam detectadas nos testes `(assert)`.
 
