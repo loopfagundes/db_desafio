@@ -1,24 +1,16 @@
 package com.saucedemo.dto;
 
 public class UserDataDTO {
-    public static UserModelDTO dto = new UserModelDTO();
-
     public static UserModelDTO userData() {
-        dto.setUsername("standard_user");
-        dto.setPassword("secret_sauce");
-        dto.setFirstName("Ricardo");
-        dto.setLastName("Costa");
-        dto.setPostalCode("90619-900");
-        dto.setProblemUser("problem_user");
-        dto.setLockedUser("locked_out_user");
-        dto.setPerformanceUser("performance_glitch_user");
-        return new UserModelDTO(dto.getUsername(),
-                                dto.getPassword(),
-                                dto.getFirstName(),
-                                dto.getLastName(),
-                                dto.getPostalCode(),
-                                dto.getProblemUser(),
-                                dto.getLockedUser(),
-                                dto.getPerformanceUser());
+        return new UserModelDTO(
+                "standard_user",
+                "secret_sauce",
+                "Ricardo",
+                "Costa",
+                "90619-900",
+                "problem_user",
+                "locked_out_user",
+                "performance_glitch_user"
+        );
     }
 }

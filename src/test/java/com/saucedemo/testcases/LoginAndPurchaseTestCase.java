@@ -12,7 +12,6 @@ public class LoginAndPurchaseTestCase extends BaseTest {
         return DriverManager.getDriver();
     }
 
-
     @Test(
             description = "CT-001, Efetua login e finalizar a compra.",
             groups = {"web"}

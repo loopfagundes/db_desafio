@@ -63,9 +63,9 @@ public class LoginAndPurchaseStep {
     private void preencheInformacoesDeCheckout() throws Exception {
         Report.logCapture(Status.INFO, "Redirecionado para tela de Checkout: Your Information");
         assertEquals(yourInformation.tituloCheckoutYourInformationNoTopoLabel(), "Checkout: Your Information", "O titulo exibida na pagina está incorreta");
-        yourInformation.firstNameTextField().sendKeys(UserDataDTO.dto.getFirstName());
-        yourInformation.lastNameTextField().sendKeys(UserDataDTO.dto.getLastName());
-        yourInformation.postalCodeTextField().sendKeys(UserDataDTO.dto.getPostalCode());
+        yourInformation.firstNameTextField().sendKeys(UserDataDTO.userData().getFirstName());
+        yourInformation.lastNameTextField().sendKeys(UserDataDTO.userData().getLastName());
+        yourInformation.postalCodeTextField().sendKeys(UserDataDTO.userData().getPostalCode());
         click(yourInformation.continueCheckoutButton());
     }
 

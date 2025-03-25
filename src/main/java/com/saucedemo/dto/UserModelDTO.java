@@ -1,34 +1,19 @@
 package com.saucedemo.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class UserModelDTO {
-    String username;
-    String password;
-    String firstName;
-    String lastName;
-    String postalCode;
-    String problemUser;
-    String lockedUser;
-    String performanceUser;
-
-    public UserModelDTO() {
-
-    }
-
-    public UserModelDTO(String username, String password,
-                        String firstName, String lastName, String postalCode,
-                        String problemUser, String lockedUser, String performanceUser) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.postalCode = postalCode;
-        this.problemUser = problemUser;
-        this.lockedUser = lockedUser;
-        this.performanceUser = performanceUser;
-    }
+    private String username;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String postalCode;
+    private String problemUser;
+    private String lockedUser;
+    private String performanceUser;
 }
