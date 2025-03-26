@@ -18,7 +18,7 @@ public class DriverManager {
     public static void quitDriver() {
         if (getDriver() != null) {
             getDriver().quit();
-            Report.log(Status.INFO, "Encerro a sessão.");
+            Report.log(Status.INFO, "Encerra a sessão.");
         }
     }
 }
