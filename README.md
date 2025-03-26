@@ -59,7 +59,7 @@ Este projeto foi desenvolvido exclusivamente para [DBServer](https://db.tec.br/)
 
 :pushpin: [TestNG](https://mvnrepository.com/artifact/org.testng/testng/7.10.2) - Framework de teste.
     
-:pushpin: [Selenium Java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.27.0) - Automatação de testes para aplicações web.
+:pushpin: [Selenium Java](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.30.0) - Automatação de testes para aplicações web.
     
 :pushpin: [WebDriverManager](https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager/5.9.2) - Gerenciamento de drivers do navegador.
     
